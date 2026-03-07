@@ -1,12 +1,13 @@
-╔══════════════════════════════════════════╗
-║ MY OPENGL LEARNING PROGRESS ║
-╚══════════════════════════════════════════╝
-
+```
+╔══════════════════════════════╗
+║ MY OPENGL LEARNING PROGRESS  ║
+╚══════════════════════════════╝
       /\
      /  \
     /____\
+```
 
-## 📌 About
+## About
 
 This repository contains my experiments/progrress while learning OpenGL using C++.
 
@@ -14,15 +15,15 @@ This repository contains my experiments/progrress while learning OpenGL using C+
 
 ## Techs
 
-C++
-OpenGL 3.3
-GLFW
-GLAD
+C++,
+OpenGL 3.3,
+GLFW,
+GLAD,
 CMake
 
 ---
 
-## ▶️ Build & Run
+## Build & Run
 
 ```
 git clone https://github.com/yourusername/opengl-learning.git
@@ -33,7 +34,7 @@ cmake --build build
 
 ---
 
-## 3️⃣ Run
+## Run
 
 ```
 
@@ -43,7 +44,7 @@ cmake --build build
 
 ---
 
-## 📚 Learning Resource
+## Learning Resource
 
 This project follows:
 LearnOpenGL
