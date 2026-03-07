@@ -38,7 +38,7 @@ cmake --build build
 
 ```
 
-./build/app
+./build/app.exe
 
 ```
 
