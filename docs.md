@@ -19,7 +19,7 @@ PROGRESS DAY 4:
 - FUCK I DID IT, SO BASICLY WE ADD THE CMakeFiles FOR EASIER COSTUME AND COMPILE, SO AND THE END WE USE G++ AND CLANGD FOR THIS PROJECT.
 - FIRST: cmake -S . -B build -G "MinGW Makefiles"
 - USE cmake --build build
-- NEXT build\app.exe
+- NEXT build\\app.exe
 
 # NEXT LERN HOW TO INSERTING FILE C++ OR OVEN FUNCTIONS AND SO ON IN THE main.cpp, SO WE CAN COMPILE IT AT ONE
 
@@ -77,3 +77,8 @@ PROGRESS DAY-12:
 PROGRESS DAY-13:
 
 - I thinks I get the way how to solve the Q3, lets see at 10/11PM
+- Questions Number 3 is done, and done for uploading on GitHub also
+
+PROGRESS DAY-14:
+
+next learn about shaders things (continue chapters)
