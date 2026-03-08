@@ -14,20 +14,24 @@ target_include_directories(glad PUBLIC
 )
 
 add_executable(app src/main.cpp)
+add_executable(shader src/shaders.cpp)
 
+#app inlcude libs
 target_include_directories(app PRIVATE
       libs/glfw/include
     )
-
 target_link_directories(app PRIVATE
       libs/glfw/lib-mingw-w64
     )
-
 target_link_libraries(app
     glfw3
     opengl32
     glad
 )
+#shaders include libs
+target_include_directories(shader PRIVATE libs/glfw/include)
+target_link_directories(shader PRIVATE libs/glfw/lib-mingw-w64)
+target_link_libraries(shader glfw3 opengl32 glad)
 
 
 

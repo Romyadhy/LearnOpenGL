@@ -50,4 +50,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/glad.dir/DependInfo.cmake"
   "CMakeFiles/app.dir/DependInfo.cmake"
+  "CMakeFiles/shader.dir/DependInfo.cmake"
   )

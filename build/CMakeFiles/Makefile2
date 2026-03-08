@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = D:\Document\C++\LearnCPP\OPENGL\build
 # The main recursive "all" target.
 all: CMakeFiles/glad.dir/all
 all: CMakeFiles/app.dir/all
+all: CMakeFiles/shader.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -73,6 +74,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/glad.dir/clean
 clean: CMakeFiles/app.dir/clean
+clean: CMakeFiles/shader.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -126,6 +128,32 @@ app: CMakeFiles/app.dir/rule
 CMakeFiles/app.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/clean
 .PHONY : CMakeFiles/app.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/shader.dir
+
+# All Build rule for target.
+CMakeFiles/shader.dir/all: CMakeFiles/glad.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\shader.dir\build.make CMakeFiles/shader.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\shader.dir\build.make CMakeFiles/shader.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Document\C++\LearnCPP\OPENGL\build\CMakeFiles --progress-num=5,6 "Built target shader"
+.PHONY : CMakeFiles/shader.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/shader.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Document\C++\LearnCPP\OPENGL\build\CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/shader.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Document\C++\LearnCPP\OPENGL\build\CMakeFiles 0
+.PHONY : CMakeFiles/shader.dir/rule
+
+# Convenience name for target.
+shader: CMakeFiles/shader.dir/rule
+.PHONY : shader
+
+# clean rule for target.
+CMakeFiles/shader.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\shader.dir\build.make CMakeFiles/shader.dir/clean
+.PHONY : CMakeFiles/shader.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

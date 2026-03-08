@@ -141,6 +141,19 @@ app/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/build
 .PHONY : app/fast
 
+#=============================================================================
+# Target rules for targets named shader
+
+# Build rule for target.
+shader: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 shader
+.PHONY : shader
+
+# fast build rule for target.
+shader/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\shader.dir\build.make CMakeFiles/shader.dir/build
+.PHONY : shader/fast
+
 libs/glad/src/glad.obj: libs/glad/src/glad.c.obj
 .PHONY : libs/glad/src/glad.obj
 
@@ -189,6 +202,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/shaders.obj: src/shaders.cpp.obj
+.PHONY : src/shaders.obj
+
+# target to build an object file
+src/shaders.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\shader.dir\build.make CMakeFiles/shader.dir/src/shaders.cpp.obj
+.PHONY : src/shaders.cpp.obj
+
+src/shaders.i: src/shaders.cpp.i
+.PHONY : src/shaders.i
+
+# target to preprocess a source file
+src/shaders.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\shader.dir\build.make CMakeFiles/shader.dir/src/shaders.cpp.i
+.PHONY : src/shaders.cpp.i
+
+src/shaders.s: src/shaders.cpp.s
+.PHONY : src/shaders.s
+
+# target to generate assembly for a file
+src/shaders.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\shader.dir\build.make CMakeFiles/shader.dir/src/shaders.cpp.s
+.PHONY : src/shaders.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -199,12 +236,16 @@ help:
 	@echo ... rebuild_cache
 	@echo ... app
 	@echo ... glad
+	@echo ... shader
 	@echo ... libs/glad/src/glad.obj
 	@echo ... libs/glad/src/glad.i
 	@echo ... libs/glad/src/glad.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/shaders.obj
+	@echo ... src/shaders.i
+	@echo ... src/shaders.s
 .PHONY : help
 
 

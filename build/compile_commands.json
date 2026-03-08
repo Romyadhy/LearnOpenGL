@@ -10,5 +10,11 @@
   "command": "D:\\APPS\\MINGGW\\mingw64\\bin\\c++.exe  @CMakeFiles/app.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\app.dir\\src\\main.cpp.obj -c D:\\Document\\C++\\LearnCPP\\OPENGL\\src\\main.cpp",
   "file": "D:/Document/C++/LearnCPP/OPENGL/src/main.cpp",
   "output": "CMakeFiles/app.dir/src/main.cpp.obj"
+},
+{
+  "directory": "D:/Document/C++/LearnCPP/OPENGL/build",
+  "command": "D:\\APPS\\MINGGW\\mingw64\\bin\\c++.exe  @CMakeFiles/shader.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\shader.dir\\src\\shaders.cpp.obj -c D:\\Document\\C++\\LearnCPP\\OPENGL\\src\\shaders.cpp",
+  "file": "D:/Document/C++/LearnCPP/OPENGL/src/shaders.cpp",
+  "output": "CMakeFiles/shader.dir/src/shaders.cpp.obj"
 }
 ]
