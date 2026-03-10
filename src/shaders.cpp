@@ -94,7 +94,7 @@ int main() {
   glAttachShader(shaderProgramDefault, fragmentShaderDefault);
   glLinkProgram(shaderProgramDefault);
 
-  // NOTE:Shader program default color
+  // NOTE:Shader program yellow color
   unsigned int shaderProgramYellow;
   shaderProgramYellow = glCreateProgram();
   glAttachShader(shaderProgramYellow, vertexShader);
@@ -135,7 +135,9 @@ int main() {
   // triangle vertices
   float vertices[] = {
       // base triangle
-      -0.2f, -0.2f, 0.0f, 0.2f, -0.2f, 0.0f, 0.0f, 0.3f, 0.0f,
+      // -0.2f, -0.2f, 0.0f, 0.2f, -0.2f, 0.0f, 0.0f, 0.3f, 0.0f,
+      -0.5f, -0.5f, 0.0f, 0.5f, -0.5f,
+      0.0f,  0.0f,  0.5f, 0.0f
 
   };
   // VBO n VAO;
