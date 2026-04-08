@@ -32,7 +32,3 @@ target_link_libraries(app
 target_include_directories(shader PRIVATE libs/glfw/include)
 target_link_directories(shader PRIVATE libs/glfw/lib-mingw-w64)
 target_link_libraries(shader glfw3 opengl32 glad)
-
-
-
-
