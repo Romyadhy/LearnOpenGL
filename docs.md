@@ -82,3 +82,7 @@ PROGRESS DAY-13:
 PROGRESS DAY-14:
 
 next learn about shaders things (continue chapters)
+
+PROGRESS DAY-15:
+- learn about vertec shader and frament shader in detail, its contain in and out and also we already implement using the same type in shader and coloring but we didnt exe it yet
+- next learn about this things try to rendering it and move into UNIFROM things, I gotta go so see ya 
