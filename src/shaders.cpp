@@ -17,6 +17,23 @@ const char *vertexShaderSource =
     "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
     "}\0";
 
+// NOTE: ABOUT SHADERS
+const char *vertexShaderr = "#version 330 core\n"
+                            "layout (location = 0) in vec3 aPos;\n"
+                            "out vec4 vertexColor;\n"
+                            "void main()\n"
+                            "{\n"
+                            "gl_Position = vec4(aPos, 1.0);\n"
+                            "vertexColor = vec4(0.5, 0.0, 0.0, 1.0);\n"
+                            "}";
+
+const char *fragmentShaderr = "#version 330 core\n"
+                              "out vec4 vertexColor;\n"
+                              "void main()\n"
+                              "{\n"
+                              "FragColor = vertexColor;\n"
+                              "}\n";
+
 const char *fragmentSDefault = "#version 330 core\n"
                                "out vec4 FragColor;\n"
                                "void main()\n"
@@ -86,7 +103,6 @@ int main() {
   glShaderSource(fragmentShasderBlue, 1, &fragmentShaderSourceBlue, NULL);
   glCompileShader(fragmentShasderBlue);
 
-  // shader program
   // NOTE: Shader program default
   unsigned int shaderProgramDefault;
   shaderProgramDefault = glCreateProgram();
