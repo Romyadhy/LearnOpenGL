@@ -91,3 +91,7 @@ PROGRESS DAY-15:
 PROGRESS DAY-16:
 - fix and implement full in and out, figure out whats the bug things before and fix it.
 - next gotta learn bout uniforms on shaders things, gotta sleep now so see ya.
+
+PROGRESS DAY-17:
+- learning about unifrom and how to used it to update color value each frame, for now we already figure out bout green color only for the tringle.
+- now the full triangle is already goin change or update ech frame, but what If I try to update color for each vertex? Lets figure it out next time, gotta sleep now cuz I just arrived home, see ya.
