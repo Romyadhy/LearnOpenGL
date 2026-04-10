@@ -1,3 +1,4 @@
+#include <cmath>
 #include <cstddef>
 #include <glad/glad.h>
 
@@ -22,9 +23,10 @@ const char *vertexShaderr = "#version 330 core\n"
 const char *fragmentShaderr = "#version 330 core\n"
                               "out vec4 FragColor;\n"
                               "in vec4 vertexColor;\n"
+                              "uniform vec4 ourColor;\n"
                               "void main()\n"
                               "{\n"
-                              "FragColor = vertexColor;\n"
+                              "FragColor = ourColor;\n"
                               "}\n";
 
 int main() {
@@ -107,11 +109,19 @@ int main() {
   // keep render running
   while (!glfwWindowShouldClose(window)) {
     // background color
-    glClearColor(0.0, 0.0, 0.0, 1.0);
+    glClearColor(0.5, 0.5, 0.5, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
 
     // glUseProgram(shaderProgramDefault);
     glUseProgram(shaderProgramShader);
+    // NOTE: --UNIFORM-- use uniform here's
+    float timeValue = glfwGetTime();
+    float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
+    int vertexColorLocation =
+        glGetUniformLocation(shaderProgramShader, "ourColor");
+    glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+
+    // TODO: Render Triangle
     glBindVertexArray(VAO);
     glDrawArrays(GL_TRIANGLES, 0, 3);
 
