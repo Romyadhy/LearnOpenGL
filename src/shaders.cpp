@@ -29,6 +29,41 @@ const char *fragmentShaderr = "#version 330 core\n"
                               "FragColor = ourColor;\n"
                               "}\n";
 
+const char *newVertexShader = "#version 330 core\n"
+                              "layout (location = 0) in vec3 aPos;\n"
+                              "layout (location = 1) in vec3 aColor;\n"
+                              "out vec3 ourColor;\n"
+                              "void main()\n"
+                              "{\n"
+                              "gl_Position = vec4(aPos, 1.0)\n;"
+                              "ourColor = aColor;\n"
+                              "}\n";
+
+const char *newfragmentShader = "#version 330 core\n"
+                                "out vec4 fragColor;\n"
+                                "out vec3 ourColor;\n"
+                                "void main()\n"
+                                "{\n"
+                                "fragColor = vec4(ourColor, 1.0)\n"
+                                "}\n";
+const char *vertexShaderSource = "#version 330 core\n"
+                                 "layout (location = 0) in vec3 aPos;\n"
+                                 "layout (location = 1) in vec3 aColor;\n"
+                                 "out vec3 ourColor;\n"
+                                 "void main()\n"
+                                 "{\n"
+                                 "   gl_Position = vec4(aPos, 1.0);\n"
+                                 "   ourColor = aColor;\n"
+                                 "}\0";
+
+const char *fragmentShaderSource = "#version 330 core\n"
+                                   "out vec4 FragColor;\n"
+                                   "in vec3 ourColor;\n"
+                                   "void main()\n"
+                                   "{\n"
+                                   "   FragColor = vec4(ourColor, 1.0f);\n"
+                                   "}\n\0";
+
 int main() {
   glfwInit();
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -56,12 +91,14 @@ int main() {
   // shader source
   unsigned int vertexShader_shader;
   vertexShader_shader = glCreateShader(GL_VERTEX_SHADER);
-  glShaderSource(vertexShader_shader, 1, &vertexShaderr, NULL);
+  glShaderSource(vertexShader_shader, 1, &vertexShaderSource,
+                 NULL); // use new vertex shader
   glCompileShader(vertexShader_shader);
   // fragment source
   unsigned int fragmentShader_shader;
   fragmentShader_shader = glCreateShader(GL_FRAGMENT_SHADER);
-  glShaderSource(fragmentShader_shader, 1, &fragmentShaderr, NULL);
+  glShaderSource(fragmentShader_shader, 1, &fragmentShaderSource,
+                 NULL); // use new frag sahder
   glCompileShader(fragmentShader_shader);
 
   // NOTE: -SHADERS SECTIONS- Shader program
@@ -86,8 +123,13 @@ int main() {
   glDeleteShader(fragmentShader_shader);
 
   // TODO: triangle vertices
-  float vertices[] = {-0.5f, -0.5f, 0.0f, 0.5f, -0.5f,
-                      0.0f,  0.0f,  0.5f, 0.0f
+  float vertices[] = {
+      // -0.5f, -0.5f, 0.0f, 0.5f, -0.5f,
+      //                   0.0f,  0.0f,  0.5f, 0.0f
+      // positions         // colors
+      0.5f,  -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, // bottom right
+      -0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, // bottom left
+      0.0f,  0.5f,  0.0f, 0.0f, 0.0f, 1.0f  // top
 
   };
   // VBO n VAO;
@@ -99,8 +141,18 @@ int main() {
   // default triangle
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
   glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)0);
+  // glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void
+  // *)0); glEnableVertexAttribArray(0);
+
+  // update data VBO
+
+  // -- position atribute
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void *)0);
   glEnableVertexAttribArray(0);
+  // -- color atribute
+  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float),
+                        (void *)(3 * sizeof(float)));
+  glEnableVertexAttribArray(1);
 
   // NOTE: safety unbind
   glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -115,11 +167,11 @@ int main() {
     // glUseProgram(shaderProgramDefault);
     glUseProgram(shaderProgramShader);
     // NOTE: --UNIFORM-- use uniform here's
-    float timeValue = glfwGetTime();
-    float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
-    int vertexColorLocation =
-        glGetUniformLocation(shaderProgramShader, "ourColor");
-    glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+    // float timeValue = glfwGetTime();
+    // float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
+    // int vertexColorLocation =
+    //     glGetUniformLocation(shaderProgramShader, "ourColor");
+    // glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
 
     // TODO: Render Triangle
     glBindVertexArray(VAO);
