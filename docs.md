@@ -95,3 +95,9 @@ PROGRESS DAY-16:
 PROGRESS DAY-17:
 - learning about unifrom and how to used it to update color value each frame, for now we already figure out bout green color only for the tringle.
 - now the full triangle is already goin change or update ech frame, but what If I try to update color for each vertex? Lets figure it out next time, gotta sleep now cuz I just arrived home, see ya.
+
+PROGRESS DAY-18:
+- continue to render 3 dif color triangle using more vertices, shader and fragment. So when we change the shader-fragment source we must change also aout the VAO, and to make it clear its called "FRAGMENT INTERPOLATION"
+- Based on these positions, it interpolates all the fragment shader's input variables. Say for example we have a line where the upper point has a green color and the lower point a blue color. If the fragment shader is run at a fragment that resides around a position at 70% of the line, its resulting color input attribute would then be a linear combination of green and blue; to be more precise: 30% blue and 70% green.
+- This is exactly what happened at the triangle. We have 3 vertices and thus 3 colors, and judging from the triangle's pixels it probably contains around 50000 fragments, where the fragment shader interpolated the colors among those pixels. 
+
