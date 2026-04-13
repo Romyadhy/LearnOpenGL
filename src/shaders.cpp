@@ -1,4 +1,3 @@
-#include <cmath>
 #include <cstddef>
 #include <glad/glad.h>
 
@@ -8,6 +7,14 @@
 // NOTE: whenever the window size changed
 void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
   glViewport(0, 0, width, height);
+}
+
+void processInput(GLFWwindow *window);
+
+void processInput(GLFWwindow *window) {
+  if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+    glfwSetWindowShouldClose(window, true);
+  }
 }
 
 // NOTE: ABOUT SHADERS
@@ -117,9 +124,16 @@ int main() {
 
   if (!success) {
     glGetShaderInfoLog(shaderProgramShader, 512, NULL, infoLog);
-    std::cout << "ERROR::SHADER::PROGRAM:COMPILATIONS_FAILED\n"
+    glGetShaderInfoLog(vertexShader_shader, 512, NULL, infoLog);
+    glGetShaderInfoLog(fragmentShader_shader, 512, NULL, infoLog);
+    std::cout << "ERROR::SHADER::PROGRAM:LINKING_FAILED\n"
+              << infoLog << std::endl;
+    std::cout << "ERROR::SHADER::VERTEX:COMPILATIONS_FAILED\n"
+              << infoLog << std::endl;
+    std::cout << "ERROR::SHADER::FRAGMENT:COMPILATIONS_FAILED\n"
               << infoLog << std::endl;
   }
+  glDeleteShader(vertexShader_shader);
   glDeleteShader(fragmentShader_shader);
 
   // TODO: triangle vertices
@@ -145,7 +159,6 @@ int main() {
   // *)0); glEnableVertexAttribArray(0);
 
   // update data VBO
-
   // -- position atribute
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void *)0);
   glEnableVertexAttribArray(0);
@@ -155,23 +168,26 @@ int main() {
   glEnableVertexAttribArray(1);
 
   // NOTE: safety unbind
-  glBindBuffer(GL_ARRAY_BUFFER, 0);
-  glBindVertexArray(0);
+  // glBindBuffer(GL_ARRAY_BUFFER, 0);
+  // glBindVertexArray(0);
+
+  // glUseProgram(shaderProgramDefault);
+  glUseProgram(shaderProgramShader);
+  // NOTE: --UNIFORM-- use uniform here's
+  // float timeValue = glfwGetTime();
+  // float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
+  // int vertexColorLocation =
+  //     glGetUniformLocation(shaderProgramShader, "ourColor");
+  // glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
 
   // keep render running
   while (!glfwWindowShouldClose(window)) {
-    // background color
+    // NOTE: background color
     glClearColor(0.5, 0.5, 0.5, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    // glUseProgram(shaderProgramDefault);
-    glUseProgram(shaderProgramShader);
-    // NOTE: --UNIFORM-- use uniform here's
-    // float timeValue = glfwGetTime();
-    // float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
-    // int vertexColorLocation =
-    //     glGetUniformLocation(shaderProgramShader, "ourColor");
-    // glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+    // NOTE: Input
+    processInput(window);
 
     // TODO: Render Triangle
     glBindVertexArray(VAO);
