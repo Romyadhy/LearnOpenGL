@@ -101,3 +101,5 @@ PROGRESS DAY-18:
 - Based on these positions, it interpolates all the fragment shader's input variables. Say for example we have a line where the upper point has a green color and the lower point a blue color. If the fragment shader is run at a fragment that resides around a position at 70% of the line, its resulting color input attribute would then be a linear combination of green and blue; to be more precise: 30% blue and 70% green.
 - This is exactly what happened at the triangle. We have 3 vertices and thus 3 colors, and judging from the triangle's pixels it probably contains around 50000 fragments, where the fragment shader interpolated the colors among those pixels. 
 
+PROGRESS DAY-19
+- refactoring the previouse code, learn more about how this working, next try to figure it out all and do some exercises.
