@@ -1,1 +1,1 @@
--ID:/Document/C++/LearnCPP/OPENGL/libs/glfw/include -ID:/Document/C++/LearnCPP/OPENGL/libs/glad/include
+-ID:/Document/C++/LearnCPP/OPENGL/target_include_directories -ID:/Document/C++/LearnCPP/OPENGL/( -ID:/Document/C++/LearnCPP/OPENGL/my_app -ID:/Document/C++/LearnCPP/OPENGL -ID:/Document/C++/LearnCPP/OPENGL/) -ID:/Document/C++/LearnCPP/OPENGL/libs/glfw/include -ID:/Document/C++/LearnCPP/OPENGL/libs/glad/include

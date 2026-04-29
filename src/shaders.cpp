@@ -1,6 +1,9 @@
 #include <cstddef>
 #include <glad/glad.h>
 
+#include <header/shader.h>
+#include <src/header/shader.h>
+
 #include <GLFW/glfw3.h>
 #include <iostream>
 
@@ -168,8 +171,8 @@ int main() {
   glEnableVertexAttribArray(1);
 
   // NOTE: safety unbind
-  // glBindBuffer(GL_ARRAY_BUFFER, 0);
-  // glBindVertexArray(0);
+  glBindBuffer(GL_ARRAY_BUFFER, 0);
+  glBindVertexArray(0);
 
   // glUseProgram(shaderProgramDefault);
   glUseProgram(shaderProgramShader);

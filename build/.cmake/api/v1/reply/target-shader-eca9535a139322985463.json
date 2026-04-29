@@ -66,6 +66,26 @@
 			[
 				{
 					"backtrace" : 4,
+					"path" : "D:/Document/C++/LearnCPP/OPENGL/target_include_directories"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "D:/Document/C++/LearnCPP/OPENGL/("
+				},
+				{
+					"backtrace" : 4,
+					"path" : "D:/Document/C++/LearnCPP/OPENGL/my_app"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "D:/Document/C++/LearnCPP/OPENGL"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "D:/Document/C++/LearnCPP/OPENGL/)"
+				},
+				{
+					"backtrace" : 4,
 					"path" : "D:/Document/C++/LearnCPP/OPENGL/libs/glfw/include"
 				},
 				{
@@ -146,6 +166,13 @@
 			[
 				0
 			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1
+			]
 		}
 	],
 	"sources" : 
@@ -155,6 +182,11 @@
 			"compileGroupIndex" : 0,
 			"path" : "src/shaders.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/header/shader.h",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

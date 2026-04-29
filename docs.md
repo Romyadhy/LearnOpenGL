@@ -103,3 +103,6 @@ PROGRESS DAY-18:
 
 PROGRESS DAY-19
 - refactoring the previouse code, learn more about how this working, next try to figure it out all and do some exercises.
+
+PROGRSS DAY-20
+- So we continue it again, now I already create a profer header file but still didnt know how to used it on main cpp. Next figure out this one. 

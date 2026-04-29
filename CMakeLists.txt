@@ -14,7 +14,7 @@ target_include_directories(glad PUBLIC
 )
 
 add_executable(app src/main.cpp)
-add_executable(shader src/shaders.cpp)
+add_executable(shader src/shaders.cpp src/header/shader.h)
 
 #app inlcude libs
 target_include_directories(app PRIVATE
@@ -29,6 +29,6 @@ target_link_libraries(app
     glad
 )
 #shaders include libs
-target_include_directories(shader PRIVATE libs/glfw/include)
+target_include_directories(shader PRIVATE target_include_directories(my_app PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")libs/glfw/include)
 target_link_directories(shader PRIVATE libs/glfw/lib-mingw-w64)
 target_link_libraries(shader glfw3 opengl32 glad)
